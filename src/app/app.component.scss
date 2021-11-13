@@ -1,0 +1,72 @@
+$color-primary: #0f0c29;
+$text-title: white;
+
+mat-toolbar {
+    color: $text-title;
+    background-color: $color-primary;
+}
+
+.cls-title{
+   text-transform: uppercase;
+   font-weight: bold;
+   margin: 1% 0 1% 0;
+   text-align: center;
+}
+
+.text-color{
+    color: $color-primary;
+}
+
+.btn-edit{
+    background-color: $color-primary;
+    font-size: 17px;
+}
+
+.btn-save{
+    background-color: $color-primary;
+    margin-bottom: 1%;
+    font-size: 17px;
+}
+
+.btn-add{
+    background-color: $color-primary;
+    width: 20%;
+    margin-bottom: 1%;
+    margin-left: 75%;
+    font-size: 17px;
+}
+
+.btn-width{
+    width: 20%;
+}
+
+.btn-cancel-delete{
+    font-size: 17px;
+}
+
+button{
+    width: 50%;
+}
+
+.text-center{
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+}
+ 
+.mat-header-cell {
+    background: #23213b;
+    font-size: 17px;
+}
+
+.formstyle{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.mat-cell{
+    font-size: 17px;
+}
+
+
