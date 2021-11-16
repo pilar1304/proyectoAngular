@@ -20,6 +20,7 @@ mat-toolbar {
 .btn-edit{
     background-color: $color-primary;
     font-size: 17px;
+    width: 32%;
 }
 
 .btn-save{
@@ -40,7 +41,12 @@ mat-toolbar {
     width: 20%;
 }
 
-.btn-cancel-delete{
+.btn-delete{
+    font-size: 17px;
+    width: 32%;
+}
+
+.btn-cancel{
     font-size: 17px;
 }
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { product } from './models/product-model';
+import { PaymentWebService } from './services/payment-web.service';
 import { ProductService } from './services/product.service'
 
 
@@ -25,6 +26,7 @@ export class AppComponent {
   constructor(
     private productSrv:ProductService,
     private fb:FormBuilder,
+    private PaymentSrv:PaymentWebService
   ){
 
   }
@@ -32,6 +34,9 @@ export class AppComponent {
   ngOnInit(){
     this.buildForm();
     this.getProduct();
+
+    this.getIndexPayment();
+    this.createPayment();
   }
 
   getProduct(){
@@ -123,5 +128,42 @@ export class AppComponent {
     this.productForm.reset();
     this.productFormStatus = false;
     this.isNewProduct = false;
+  }
+
+
+  getIndexPayment(){
+    this.PaymentSrv.index().subscribe((response:any)=>{
+      console.log(response)
+    })
+  }
+
+  createPayment(){
+    let body = {
+      companyType:"",
+      document	:"",
+      documentType: "",	
+      fullName	: "",
+      address	: "",
+      mobile	: "",
+      email	: "",
+      reference: "",	
+      description	: "",
+      amount	:0.00,
+      amountWithTax:0.00,	
+      amountWithoutTax	:0.00,
+      tax	:0.00,
+      notifyUrl: "",	
+      gateway	:1,
+      generateInvoice	:0,
+      customValue	: "",
+      installmentsWithInterest	: "",
+      installmentsWithoutInterest	: "",
+      installmentsCurrent	: "",
+      cardBrands:""
+    }
+
+    this.PaymentSrv.createPayment(body).subscribe((response:any)=>{
+      console.log(response)
+    })
   }
 }
